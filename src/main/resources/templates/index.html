@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-US" xmls:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Spring Boot Journal</title>
+<link rel="stylesheet' type="text/css" media="all" href="css/bootstrap.min.
+<ss"></link>
+<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-
+glyphicons.css"></link>
+<link rel="stylesheet" type="text/css"media="all" href="css"></link>
 </head>
-<body>
 
+<body>
+<div class="contannier">
+  <h1>entertain</h1>
+  
+  <ul class="timeline">
+  <div th:each="entry.status : ${journal}">
+  <li th:attr="class=${status.odd}?'timeline-inverted':''">
+  <div class="tl-circ"></div>
+  <div class="timeline-panel">
+  <div class="tl-heading">
+  <h4><span th:text="${entry.title}">제목</span></h4>
+  <p><small class="text-muted"><i class=glyphicon glyphicon-time"></i>
+  <span th:text="${entry.createdAsShort}">에 작성.</span></small></p>
+  </div>
+  <div class="tl-body">
+                  <p><spen th:text="${entry.summary}">요약</spen></p>
+               </div>
+            </div>
+         <li>
+     </div>
+  </div>
+  <li>
+  <div>
+  <ul>
+</div>
 </body>
 </html>
