@@ -6,13 +6,11 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.util.List;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AliasFor;
-import org.springframework.core.annotation.AnnotationAttributes;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -23,21 +21,15 @@ import org.springframework.core.annotation.AnnotationAttributes;
 @ComponentScan
 public @interface SpringBootApplication {
 	
-	Class<?>[] exclude() default{};
+	@AliasFor(annotation = EnableAutoConfiguration.class, attribute = "exclude")
+	Class<?>[] exclude() default {};
 	
+	@AliasFor(annotation = EnableAutoConfiguration.class, attribute = "excludeName")
 	String[] excludeName() default {};
 	
 	@AliasFor(annotation = ComponentScan.class, attribute = "basePackages")
-	String[] scanBasePackges() default {};
+	String[] scanBasePackages() default {};
 	
 	@AliasFor(annotation = ComponentScan.class, attribute = "basePackageClasses")
-	Class<?>[] scanBasPackageClasses() default {};
-	
-	
+	Class<?>[] scanBasePackageClasses() default {};
 }
-
-protected List<String> getCardidateConfigurations(AnnotationMetadata metadata,
-		AnnotationAttributes attributes)  {
-	return SpringFactoriesLoader.loadFactoryNames{
-		getSpringFactoryClass(). getBeanClassLoader());
-	}

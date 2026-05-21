@@ -3,6 +3,7 @@ plugins {
 	id 'war'
 	id 'org.springframework.boot' version '3.5.14'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'eclipse-wtp'
 }
 
 group = 'com.winter'
@@ -20,11 +21,11 @@ repositories {
 
 dependencies {
 
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' 
-    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
-    runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl' 
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' 
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+	runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl' 
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
@@ -43,12 +44,12 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
 eclipse {
-    wtp {
-        facet {
-            facet name: 'jst.web', version: '6.0'
-            facet name: 'jst.java', version: '21' 
-            
-        }
-    }
+	wtp {
+		facet {
+			facet name: 'jst.web', version: '6.0'
+			facet name: 'jst.java', version: '21' 
+		}
+	}
 }

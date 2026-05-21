@@ -5,29 +5,27 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.val;
-
-import java.beans.Transient;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Journal {
 	
 	@Id
-	@GaneratedValue(stratery=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String tiltle;
+	private String title;
 	private Date created;
 	private String summary;
 	
 	@Transient
 	private SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 	
-	public Journal(String tilte, String summary, String data) throws
-	ParseException {
-		this.tiltle = tilte;
+	public Journal(String title, String summary, String date) throws ParseException {
+		this.title = title;
 		this.summary = summary;
-		this.created = format.parse(data);
+		this.created = format.parse(date);
 	}
 	
 	Journal() {} 
@@ -44,16 +42,12 @@ public class Journal {
 		return title;
 	}
 	
-	public void setTitle(String tiltle) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
 	public Date getCreated() {
 		return created;
-	}
-	
-	public void setCreated(Date create) {
-		this.created = created;
 	}
 	
 	public void setCreated(Date created) {
@@ -64,21 +58,25 @@ public class Journal {
 		return summary;
 	}
 	
-	public String getCreatedAsShort() {
-		return format(created);
-    }
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
 	
+	public String getCreatedAsShort() {
+		return format.format(created);
+	}
+	
+	@Override
 	public String toString() {
 		StringBuilder value = new StringBuilder("JournalEntry(");
-		value.append("Id:  ");
+		value.append("Id: ");
 		value.append(id);
-		value.append(",제목:");
-		value.append(tiltle);
+		value.append(",제목: ");
+		value.append(title);
 		value.append(",요약: ");
 		value.append(summary);
 		value.append(",일자: ");
 		value.append(getCreatedAsShort());
-		value.append(")");
 		value.append(")");
 		return value.toString();
 	}
