@@ -1,0 +1,94 @@
+$ curl -i http://localhost:8080
+HTTP/1.1 200 OK 
+Server: Apache-Coyote/1.1
+Content -Type: application/hal+json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 05 Feb 2026 00:12:29 GMT
+
+{
+   "_links" : {
+   "journalEntries" : {
+   "href" = "http://localhost:8080/journalEntiries{?page, size, sort}",
+   "templated" : true
+   },
+   "profile" : {
+      "href" : http://localhost:808/profile"
+      }
+     }
+   }
+   
+   
+  $ curl -i http://localhost:8080/journalEntries
+  HTTP/1.1 200 OK
+  Server : Apache-Coyote/1.1
+  Content-Type:application/hal+json;charset=UTF-8
+  Transfer- Encoding:chunked
+  Date: Sun, 22 Jan 2026 07:17:05 GMT
+  
+  {
+    "_embedded" : {
+     "jsournalEntries" : [ {
+     "title" : "",
+     "created" : "",
+     "summary" : "",
+     "links" : {
+     "self" : {
+      "href" : "http://localhost8080/journalEntries/1"
+      },
+      "journalEntry" : {
+       "href" = "http://localhost:8080/journalEntries/1"
+       }
+      }
+     }, {
+         title : "",
+         "created" : "",
+         "summary" : "",
+         "_links : {
+            "self : {
+            "href" : http:localhost8080/journaalEnties/2"
+            }
+           }
+          }, {
+             "title" : "",
+             "created" : "",
+             "summary" : "",
+             "_links" : {
+             "self" :
+             "href : http:/localhost:8080/journalEntries/3"
+             },
+             "journalEntry" : {
+               "href" : "http"://localhost:8080/journalEntries/3"
+              }
+             }
+            }, {
+                "title" : "",
+                "created" : "",
+                "summary" : "",
+                "_links" : {
+                  "self" : {
+                  "href" : http://localhost:8080/journalEnties/4"
+                  },
+                    "journalEntry" : {
+                    "href" : "http://localhost:8080/journalEnties/4"
+                    }
+                   }
+                  }]
+                  },
+                  "_links" : {
+                    "self" : {
+                    "href" : "http://localhost:8080/journalEntries"
+                    },
+                    "profile" : {
+                     "href" : http://localhost:8080/profile/journalEnties"
+                     },
+                     "search" : {
+                     "href" : http://localhost:8080/api/journal/search"
+                       }
+                     },
+                      "page" : {
+                      "size" : 20,
+                      "totalElements" : 4,
+                      "titalPages" : 1,
+                      "number" : 0
+                         }
+                      }       

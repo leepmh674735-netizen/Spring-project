@@ -1,0 +1,8 @@
+@EnableJms  JMS 메시징
+@EnableCaching 캐시 추상화
+@EnableRabbit  래빗MQ로 AMQP 메시징
+@EnableBatchProcessing 스프링 배치
+@EnableWebSecurity  스프링 시큐리티
+@EnableRedisHttpSession   스프링 세션
+@EnableJpaReposiRepositories 스프링 데이터
+@EnableIntegration   스프링 통합

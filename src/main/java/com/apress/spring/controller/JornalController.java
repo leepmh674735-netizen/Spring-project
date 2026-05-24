@@ -45,4 +45,6 @@ public class JournalController {
 		entries.add(entry);
 		return entry;
 	}
+	
+
 }

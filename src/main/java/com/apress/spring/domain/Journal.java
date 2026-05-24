@@ -6,8 +6,8 @@ import java.util.Date;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
+import java.beans.persistence.Id;
+import java.beans.Transient;
 
 @Entity
 public class Journal {
@@ -78,6 +78,7 @@ public class Journal {
 		value.append(",일자: ");
 		value.append(getCreatedAsShort());
 		value.append(")");
+		
 		return value.toString();
 	}
 }
