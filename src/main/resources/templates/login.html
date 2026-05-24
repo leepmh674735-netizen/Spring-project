@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmls:th=http://www.thymeleaf.org">
+<head>
+     <title>Login</title>
+     <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css">
+  </link>
+   <link rel=stylesheet" type="text/css" media="all" href="css/styles.css">
+   </link>
+</head>
+<body>
+   <div class="contationer">
+  <div class="conrent">
+  <p th:if="${param.logout}" class="alert">로그아웃 </p>
+ <p th:if="${param.error}" class="alert alert-error"> 오류 발생, 다시 시도</p>
+ <h2> 스프링 부트 일기 로그인 </h2>
+<form name="from" th:action="@{/login}" action="/login" method="POST">
+       <input type="text" name="username" value="" plecheholder="USername" />
+       <input type="password" name="password" pleceholder="Password" />
+       <input type="sumbit" id="login" value="login" class="btn btn-primary" />
+     </form>
+   </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+spring.hornetq.mode=embedded
+spring.hornetq.embedded.enble=ture
+spring.horentq.embedded.queues=springbootQueue, SpringQuene
+
+myquene=springbootQueue
+myotherqueue=SpringQueue
