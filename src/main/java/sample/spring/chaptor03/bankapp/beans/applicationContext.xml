@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bankDetails" class="sample.spring.chapter03.beans.BankDetails">
+         <property name="bankName" value="My Personal Bank" />
+         <property name="bankPrimaryBusiness" value="Retail banking" />
+         <property name="headOfficeAddress" value="Address of head office"/>
+         <property name="privateBank" value="Y" />
+         <property name="primaryCurrency" value="INR" />
+         
+         <property name="dateOfInception" value="30-01-2012" />
+         
+         <property name="branchAddresses">
+             <map>
+                 <entry key="x" value="Branch X's address" />
+                 <entry key="y" value="Branch Y's address" />
+             </map>
+         </property>  
+    </bean>
+
+</beans>

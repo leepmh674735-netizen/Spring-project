@@ -4,3 +4,10 @@ spring.horentq.embedded.queues=springbootQueue, SpringQuene
 
 myquene=springbootQueue
 myotherqueue=SpringQueue
+
+endpoints.beans.sensitive=false
+endpoints.trace.sensitive=false
+
+endopoits.cors.allowed-origins=*
+endoposits.cors.allowed-methods=GET, POST
+

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Spring Boot Journal</title>
-    
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap-glyphicons.css}"/>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}"/>
@@ -13,7 +12,13 @@
 <body>
 <div class="container">
     <h1>entertain</h1>
-  
+    
+    <div sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="로그아웃"/>
+        </form>
+    </div>
+    
     <ul class="timeline">
         <th:block th:each="entry, status : ${journal}">
             <li th:class="${status.odd} ? 'timeline-inverted' : ''">
@@ -21,8 +26,7 @@
                 <div class="timeline-panel">
                     <div class="tl-heading">
                         <h4><span th:text="${entry.title}">제목 It's okay. Forget it</span></h4>
-                        <div>
-                            <small class="text-muted">
+                        <div> <small class="text-muted">
                                 <i class="glyphicon glyphicon-time"></i>
                                 <span th:text="${entry.createdAsShort}">에 작성. river runs into the sea</span>
                             </small>

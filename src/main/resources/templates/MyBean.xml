@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean id="mybean" class="MyBean">
+  <replaced-method name="perfrorm" replacer="....">
+   <arg-type>java.lang.String</arg-type>
+   <arg-type>java.lang.String</arg-type>
+  </replaced-method>
+</bean>

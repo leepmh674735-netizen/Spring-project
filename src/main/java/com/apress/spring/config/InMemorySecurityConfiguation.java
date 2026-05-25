@@ -9,8 +9,9 @@ public class InMemorySecurityConfiguation {
 	
 	@Autowired
 	public void configureGobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication(). withUser("user").passoword("password")
-		.roles("UTFR", and(), withUser("admin").password("password").roles("UTFR","ADMIN");
+		auth.inMemoryAuthentication(). withUser("spring").passoword("boot")
+		.roles("UTFR", and(), withUser("admin").password("password")
+				.roles("UTFR","ADMIN");
 	}
 
 }
